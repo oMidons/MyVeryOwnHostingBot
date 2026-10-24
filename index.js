@@ -370,6 +370,27 @@ function createBot() {
       checkTimeoutInterval: 600000
     });
 
+const originalWrite = bot._client.write.bind(bot._client);
+
+bot._client.write = (name, packet) => {
+  const result = originalWrite(name, packet);
+
+  if (
+    name === 'position' ||
+    name === 'position_look' ||
+    name === 'look' ||
+    name === 'flying'
+  ) {
+    try {
+      originalWrite('tick_end', {});
+    } catch (err) {
+      // Ignora versões de protocolo sem esse pacote.
+    }
+  }
+
+  return result;
+};
+    
     bot.loadPlugin(pathfinder);
 
     clearBotTimeouts();
