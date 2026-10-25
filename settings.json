@@ -3,7 +3,7 @@
   "bot-account": {
     "username": "ResenhAFK",
     "password": "",
-    "type": "offline"
+    "type": "online"
   },
   "server": {
     "ip": "resenha.funserver.top",
