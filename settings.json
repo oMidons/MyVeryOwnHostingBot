@@ -5,10 +5,11 @@
     "password": "",
     "type": "online"
   },
-  "server": {
-    "ip": "resenha.funserver.top",
-    "version": "",
-    "try-creative": false
+"server": {
+  "ip": "dynamic-9.magmanode.com",
+  "port": 25802,
+  "version": "",
+  "try-creative": false
   },
   "position": {
     "enabled": true,
