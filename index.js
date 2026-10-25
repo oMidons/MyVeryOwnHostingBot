@@ -360,17 +360,6 @@ function createBot() {
     const authPassword = process.env.BOT_AUTH_PASSWORD || config.utils['auto-auth']?.password;
 
     bot = mineflayer.createBot({
-      bot.on('kicked', (reason) => {
-  console.log('EXPULSO:', reason)
-})
-
-bot.on('end', (reason) => {
-  console.log('CONEXÃO ENCERRADA:', reason)
-})
-
-bot.on('error', (err) => {
-  console.log('ERRO:', err.message)
-})
       username: botUsername,
       password: botPassword,
       auth: config['bot-account'].type,
